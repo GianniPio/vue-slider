@@ -17,18 +17,27 @@
         <div id="carousel">
 
             <!-- Immagine grande con testo -->
-            <div class="big">        
+            <div class="big">
+                <div class="big_img active">
+                    <img :src="slides[activeClass].items" :alt="slides[activeClass].title">
+                    <div class="text">
+                        <h3>{{slides[activeClass].title}}</h3>
+                        <p>{{slides[activeClass].text}}</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Immagine piccola -->
             <div class="small">
-
+                <div v-for="(slide, i) in slides" class="small_img" :class="i === activeClass ? 'active' : '' " :key="i">
+                    <img :src="slide.items" :alt="slide.title" >
+                </div>
                 <!-- Tasto indietro -->
-                <div class="back">
+                <div class="back" @click="indietro">
                     <i class="fas fa-chevron-up"></i>
                 </div>
                 <!-- Tasto avanti -->
-                <div class="next">
+                <div class="next" @click="avanti">
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
@@ -39,6 +48,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
 </body>
 </html>
