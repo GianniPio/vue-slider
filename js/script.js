@@ -1,9 +1,9 @@
 var page = new Vue (
     {
-        el: '#carousel',
-        data: {
-            activeClass: 0,
-            slides : [
+        el: '#carousel', /*seleziono elemento*/
+        data: {  /* dati da inserire */
+            activeClass: 0,  /*contatore usato per la classe active */
+            slides : [       /* array di ogetti */
 
                 { 
                     items: 'img/01.jpg',
@@ -33,6 +33,7 @@ var page = new Vue (
             ],
         },
 
+        // funzione che aumenta il contatore per le slide
         methods: {
             avanti: function(){
                 if (this.activeClass === this.slides.length - 1) {
@@ -45,6 +46,7 @@ var page = new Vue (
                 }
             },
 
+            // funzione che diminuisce il contatore per le slide
             indietro: function(){
                 if (this.activeClass === 0) {
                     this.activeClass = this.slides.length - 1;
