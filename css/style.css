@@ -25,21 +25,12 @@ img {
 
 /* tag immagine grande */
 
-.big {
-    width: 85%;
-}
-
-.big img {
+.big_img {
     /* display: none; */
     position: relative;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.big_img img {
-   object-fit: cover;
-   width: 100%;
+    object-fit: contain;
+    width: 572px;
+    height: 300px;
 }
 
 .big_img.active {
