@@ -44,6 +44,14 @@ var page = new Vue (
                     this.activeClass ++;
                 }
             },
+
+            indietro: function(){
+                if (this.activeClass === 0) {
+                    this.activeClass = this.slides.length - 1;
+                }else {
+                    this.activeClass --;
+                }
+            }
         }
     }
 );
